@@ -4,15 +4,16 @@ import 'dart:math';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_tflite/flutter_tflite.dart';
-import 'package:loading_indicator/loading_indicator.dart';
 
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:loading_indicator/loading_indicator.dart';
+import 'package:music_player/Screens/details_screen.dart';
+import 'package:music_player/api/label.dart';
+import 'package:music_player/applications/music_player/music_player_bloc.dart';
+import 'package:music_player/domains/song_model.dart';
 import 'package:permission_handler/permission_handler.dart';
-import '../api/label.dart';
-import '../applications/music_player/music_player_bloc.dart';
-import '../domains/song_model.dart';
-import 'details_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:tflite_v2/tflite_v2.dart';
 
 class EmotionScreen extends StatefulWidget {
   const EmotionScreen({super.key});

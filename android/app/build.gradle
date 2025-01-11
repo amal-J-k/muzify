@@ -15,6 +15,11 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
+    aaptOptions {
+        noCompress 'tflite'
+        noCompress 'lite'
+    }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }

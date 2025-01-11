@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../applications/music_player/music_player_bloc.dart';
-import 'analytics.dart';
+//import 'analytics.dart';
 import 'details_screen.dart';
 import 'emotion_screen.dart';
 import 'home_screen.dart';
@@ -18,7 +18,7 @@ class MainScreen extends StatelessWidget {
   final _pages = [
     const Placeholder(),
     const EmotionScreen(),
-    const EmotionAnalyticsScreen(),
+    //const EmotionAnalyticsScreen(),
   ];
 
   MainScreen({super.key});
