@@ -3,7 +3,6 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class EmotionData {
   final String emotion;
   final int count;
@@ -44,7 +43,7 @@ class _EmotionAnalyticsScreenState extends State<EmotionAnalyticsScreen> {
     if (prefs.getInt('sad') == null) await prefs.setInt('sad', 0);
     if (prefs.getInt('surprised') == null) await prefs.setInt('surprised', 0);
 
-    await loadData(); 
+    await loadData();
   }
 
   Future<void> loadData() async {
@@ -57,7 +56,7 @@ class _EmotionAnalyticsScreenState extends State<EmotionAnalyticsScreen> {
     int sad = prefs.getInt('sad') ?? 0;
     int surprised = prefs.getInt('surprised') ?? 0;
 
-    log('Sad count: $sad'); 
+    log('Sad count: $sad');
 
     data = [
       EmotionData(emotion: 'Angry', count: angry, color: Colors.red),
@@ -69,7 +68,7 @@ class _EmotionAnalyticsScreenState extends State<EmotionAnalyticsScreen> {
       EmotionData(emotion: 'Surprised', count: surprised, color: Colors.orange),
     ];
 
-    isFetched.value = true; 
+    isFetched.value = true;
   }
 
   @override
@@ -129,17 +128,17 @@ class _EmotionAnalyticsScreenState extends State<EmotionAnalyticsScreen> {
                             .entries
                             .map(
                               (e) => BarChartGroupData(
-                                x: e.key,
-                                barRods: [
-                                  BarChartRodData(
-                                    y: e.value.count.toDouble(),
-                                    colors: [e.value.color],
-                                    width: 20,
-                                    borderRadius: BorderRadius.circular(6),
-                                  ),
-                                ],
+                            x: e.key,
+                            barRods: [
+                              BarChartRodData(
+                                y: e.value.count.toDouble(),
+                                colors: [e.value.color],
+                                width: 20,
+                                borderRadius: BorderRadius.circular(6),
                               ),
-                            )
+                            ],
+                          ),
+                        )
                             .toList(),
                       ),
                     ),
